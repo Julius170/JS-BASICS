@@ -33,6 +33,12 @@ function  stop() {
 
 // ARGUMENTS
 
+function sum(a, b) {
+    return a + b;
+} 
+
+
+
 
 
 
