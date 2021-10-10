@@ -20,25 +20,24 @@ run();
 move();
 
 
+
+
 // HOISTING = IS THE PROCESS OF MOVING FUNCTION DECLARATIONS 
 // TO THE TOP OF THE FILE
 // FOR  FUNCTON DECLARATION 
+
 stop();
 
 function  stop() {
     console.log('stop');
 };
-// BUT IS NOT APPLICALE TO FUNCTION EXPRESSION 
+// BUT IS NOT APPLICABLE TO FUNCTION EXPRESSION 
 
 
 // ARGUMENTS
 
+ 
+
 function sum(a, b) {
     return a + b;
 } 
-
-
-
-
-
-
