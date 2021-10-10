@@ -55,4 +55,12 @@ console.log(sum(1, 2, 3, 4, 5));  // ONLY THE  FIRST 2 ARGUMENTS ARE USED
 
 
 
-// THE REST OPERATION
+// THE REST OPERATION (...)
+// THEY TAKE ALL THE  AALL THE ARGUMENTS 
+function newSum(...args) { 
+    console.log(args);
+    return args.reduce((a,b) => a + b);
+}
+
+console.log(newSum(1, 2, 3, 4, 5));
+
