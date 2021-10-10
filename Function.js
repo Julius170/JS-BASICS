@@ -56,7 +56,8 @@ console.log(sum(1, 2, 3, 4, 5));  // ONLY THE  FIRST 2 ARGUMENTS ARE USED
 
 
 // THE REST OPERATION (...)
-// THEY TAKE ALL THE  AALL THE ARGUMENTS 
+// WHEN YOU APPLY A REST IN THE PARAMETER OF A 
+// THEY TAKE ALL THE  ALL THE ARGUMENTS PASSED IN AN PARAMETER 
 function newSum(...args) { 
     console.log(args);
     return args.reduce((a,b) => a + b);
