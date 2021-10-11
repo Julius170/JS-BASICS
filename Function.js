@@ -56,13 +56,27 @@ console.log(sum(1, 2, 3, 4, 5));  // ONLY THE  FIRST 2 ARGUMENTS ARE USED
 
 
 // THE REST OPERATION (...)
+
 // WHEN YOU APPLY A REST IN THE PARAMETER OF A FUNCTION
 // IT TAKES  ALL THE ARGUMENTS PASSED IN AND RETURN THEM ADS AN ARRAY
+// THEY MUST ALWAYS BE PAASSED AS THE LAST PARAMETER 
+
 function newSum(...args) { 
-    args.reduce
     console.log(args);
     return args.reduce((a,b) => a + b);
 }
 
 console.log(newSum(1, 2, 3, 4, 5));
+
+function newSum(discount,...prices) {
+    const total = prices.reduce((a, b) => a + b);
+    return total * (1 - discount)
+}
+
+console.log(newSum(0.1, 20, 30));
+
+
+
+
+
 
