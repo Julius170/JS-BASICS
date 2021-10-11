@@ -77,11 +77,30 @@ console.log(newSum(0.1, 20, 30));
 
 // DEFUALT PARAMETERS
 
-function interest (principal, rate, year) {
-    return principal * rate / 100 * years;
+function interest (principal, rate = 3.5, year = 5) {
+    // rate = rate || 3.5;
+    // year = year || 5;
+
+
+    return principal * rate / 100 * year;
 }
 
-console.log(interest(10000, 3.5, 5));
+console.log(interest(10000));
 
 
+// GETTERS AND SETTERS
+
+const person = {
+    firstName: "Phensic",
+    lastName: 'Mayowa',
+    fullName() {
+        return (`${person.firstName} ${person.lastName}`
+    }
+};
+
+
+console.log(person.fullName);
+
+
+console.log(`${person.firstName} ${person.lastName}`);
 
