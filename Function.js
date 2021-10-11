@@ -75,8 +75,13 @@ function newSum(discount,...prices) {
 
 console.log(newSum(0.1, 20, 30));
 
+// DEFUALT PARAMETERS
 
+function interest (principal, rate, year) {
+    return principal * rate / 100 * years;
+}
 
+console.log(interest(10000, 3.5, 5));
 
 
 
