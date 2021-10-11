@@ -97,14 +97,17 @@ const person = {
         return `${person.firstName} ${person.lastName}`
     },
     set fullName (value) {
+        if (typeof value !== 'string')return;
+        throw new Error('Value is not a sting');
+
         const parts = value.split(' ');
+        if (parts.length !==2 )
+        throw new Error ('Enter a first and last  name.')
         this.firstName = parts[0];
         this.lastName = parts[1];
 
     }
 };
-
-person.fullName = 'John Smith ';
 // GETTERS ARE USED TO ACCESS THE PROPERTIES IN AN OBJECT
 // SETTERS ARE USED TO CHANGE (MUTATE) THE PREOPERTIES OF AN OBJECT
 
@@ -117,4 +120,10 @@ console.log(person);
 
 
 // TRY AND CATCH
-person.fullName = null;
+try {
+    person.fullName = '';
+}
+catch (e) {
+    console.log(e);
+    alert(e);
+}
