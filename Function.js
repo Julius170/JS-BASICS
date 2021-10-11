@@ -93,14 +93,28 @@ console.log(interest(10000));
 const person = {
     firstName: "Phensic",
     lastName: 'Mayowa',
-    fullName() {
-        return (`${person.firstName} ${person.lastName}`
+    get fullName() {        // USING THE GETTER
+        return `${person.firstName} ${person.lastName}`
+    },
+    set fullName (value) {
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+
     }
 };
 
+person.fullName = 'John Smith ';
+// GETTERS ARE USED TO ACCESS THE PROPERTIES IN AN OBJECT
+// SETTERS ARE USED TO CHANGE (MUTATE) THE PREOPERTIES OF AN OBJECT
 
-console.log(person.fullName);
+// console.log(person.fullName());   => CALLING THE FUNCTION
+    
+console.log(person.fullName);   //=> CALLING THE KEY PAIR USING GET
+console.log(person);
 
 
-console.log(`${person.firstName} ${person.lastName}`);
 
+
+// TRY AND CATCH
+person.fullName = null;
