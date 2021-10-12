@@ -193,10 +193,17 @@ function sayHi() {
 
 const video = {
     title: 'a',
+    tags: ['a', 'b', 'c'],
+    showTags() {
+        this.tags.forEach(function(tag) {
+            console.log(this, tag);
+        },this.title);
+    },
     play() {
         console.log(this);
     }
 };
+video.showTags();
 // video.stop = function () {
 //     console.log(this);
 // } ;
@@ -205,7 +212,14 @@ function Video(title) {
 this.title = title;
     console.log(this);
 }
-Video();
+const v = new Video('c');
+
+
+
+// CHANGING THE VALUE OF THIS
+
+
+
 
 
 
