@@ -188,3 +188,25 @@ function sayHi() {
 
 
 // THE "THIS" KEYWORD => IT REFERENCES THE OBJECT THAT IS EXECUTING THE CURRENT FUNCTION
+// METHOD => OBJECT
+// FUNCTION => GLOBAL(WINDOW, GLOBAL)
+
+const video = {
+    title: 'a',
+    play() {
+        console.log(this);
+    }
+};
+// video.stop = function () {
+//     console.log(this);
+// } ;
+
+function Video(title) {
+this.title = title;
+    console.log(this);
+}
+Video();
+
+
+
+
