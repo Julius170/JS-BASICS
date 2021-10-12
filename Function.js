@@ -208,7 +208,7 @@ video.showTags();
 //     console.log(this);
 // } ;
 
-function Video(title) {
+function Video(title) { 
 this.title = title;
     console.log(this);
 }
@@ -218,9 +218,16 @@ const v = new Video('c');
 
 // CHANGING THE VALUE OF THIS
 
+function playVideo(a, b) {
+    console.log(this);
+}
 
 
+playVideo.call({ name: 'Mayor'},1, 2);
+playVideo.apply({ name: 'Mayor'}, [1, 2]);
+playVideo.bind({ name: 'Mayor' })();
 
+playVideo();
 
 
 
