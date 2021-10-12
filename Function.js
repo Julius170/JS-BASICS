@@ -98,11 +98,11 @@ const person = {
     },
     set fullName (value) {
         if (typeof value !== 'string')return;
-        throw new Error('Value is not a sting');
+        // throw new Error('Value is not a sting');
 
         const parts = value.split(' ');
         if (parts.length !==2 )
-        throw new Error ('Enter a first and last  name.')
+        // throw new Error ('Enter a first and last  name.')
         this.firstName = parts[0];
         this.lastName = parts[1];
 
@@ -120,10 +120,65 @@ console.log(person);
 
 
 // TRY AND CATCH
-try {
-    person.fullName = '';
+// try {
+//     person.fullName = '';
+// }
+// catch (e) {
+//     console.log(e);
+//     alert(e);
+// }
+
+
+
+// LOCAL vs GLOBAL SCOPE
+// A SCOPE OF A VARIABLE OR CONSTANT DETERMINES WHERE THE VARIABLE OR CONSTANT IS ACCESSIBLE
+
+const coloring = 'red'; //GLOBAL SCOPE => CAN BE ACCESSIBLE GLOBALLY (EVERYWHERE)
+
+function starting() {
+const message = 'Hi'; 
+const coloring = 'blue';
+console.log(coloring);  //LOCAL SCOPE => IS ONLY ACCESSIBLE LOCALLY (IN THE START FUNCTION)
 }
-catch (e) {
-    console.log(e);
-    alert(e);
+
+function stoping() {
+    const message = 'bye';   // LOCAL SCOPE
+}
+
+starting();
+
+// LOCAL VARIABLES TAKE PRESEDENCE OVER GLOBAL VARIAVLES
+
+
+
+
+// LET vs VAR
+// \WHEN DEFINING A VARIALBLE WITH VAR, ITS SCOPE IS NOT LIMITED TO THE BAR ITS DEFINED IN
+// BUT IS LIMITED TO THE FUNCTION ITS DEFINED IN
+// VAR => FUNCTION SCOPE VARIABLES
+// ES6 (ES2015): LET & CONST =>   BLOCKED-SCOPED
+
+
+function start() {
+    for (let i = 0; i < 5; i++) {
+        if (true) {
+            var color = 'red'
+        }
+    }
+    console.log(color);
+    // console.log(i);
+}
+
+start();
+
+
+
+var color = 'red'
+let age = 30;
+
+
+
+
+function sayHi() {
+    console.log('Hi');
 }
