@@ -41,7 +41,7 @@ function createCircle(radius) {
        }
     };
 }
-// const circle = createCircle(1);
+let circle = createCircle(10);
 circle.draw();
 
 
@@ -52,6 +52,7 @@ function Circle(radius) {
     console.log('draw');
     }
 }
+// FUNCTIONS ARE OBJECTS
 
 const Circle1 = new Function('radius',`
     this.radius = radius;
@@ -60,18 +61,88 @@ const Circle1 = new Function('radius',`
     }`
     );
 
-const circle = new Circle(1);
-
 const another = new Circle(1);
-console.log('is this code really working');
 
 
+Circle.call({}, 1);
+Circle.apply({}, [1, 2, 3, 4]);
+ 
 // CONSTRUCTOR PROPERTY: e.g(another.constructor)
 // EVERY OBJECT HAS A CONSTRUCTOR PROPERTY THAT REFERENCES THE 
 // FUNCTION THAT WAS USED TO CREATE THE OBJECT 
 
 
-// FUNCTION ARE OBJECT
+
+// VALUE vs REFERENCE TYPES
+// VALUE TYPES => NUMBERS, STRINGS, BOOLEANS, SYMBOLS, UNDEFINED, NULL
+// REFERENCE TYPES => OBJECTS, FUNCTIONS, ARRAYS
+
+let x = {value: 10}
+let y = x;
+
+x.value = 20;
+//  PRIMITIVES ARE COPIED BY THIER VALUES
+//  OBJECTS ARE COPIED BY THEIR REFERENCES
+let number = 10;
+
+function increase(number) {
+    number++    
+}
+
+increase(number);
+console.log(number);
+
+// ADDING/REMOVING PROPERTIES
+
+function Circular(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
+}
+const circular = new Circular(10);
+circular.location =  {x: 1 };
+
+const propertyName = "location";
+
+circular[propertyName] = {x: 1 };
+
+// delete circular['location'];
+
+// ENUMERATING PROPERTIES
+for (let key in circle) {
+    if (typeof circle[key !== 'function'])
+    console.log(key, circle[key]);
+}
+
+
+const keys = Object.keys(circle)
+console.log(keys);
+
+
+if ('radius' in circle)
+    console.log('Circle has a radius');
+
+
+// ABSTRACTION: HIDE THE DETAILS AND SHOW THE ESSENTIALS
+function Circulation(radius) {
+    this.radius = radius;
+
+    this.defaultLocation = {x:0 , y:0};
+    this.computeOptimumLocation = function () {
+        // ...
+    }
+    this.draw = function() {
+        this.computeOptimumLocation();
+        console.log('draw');
+    };
+}
+const circulation = new Circulation(10);
+circle.draw();
+
+
+
+
 
 
 
